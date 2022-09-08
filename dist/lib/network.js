@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.readNetworkTicker = exports.readExternalAddressesCheck = exports.searchNetworkAsset = exports.readNetworkAsset = exports.readNetworkAssetsMultisig = exports.readNetworkAssetsTop = exports.readExternalTransactions = exports.readNetworkSnapshot = exports.readNetworkSnapshots = exports.readNetworkChains = void 0;
+var http_1 = require("./http");
+var readNetworkChains = function () { return (0, http_1.mixinRequest)("/network/chains"); };
+exports.readNetworkChains = readNetworkChains;
+// only support limit/offset/asset/order
+var readNetworkSnapshots = function (params) { return (0, http_1.mixinRequest)("/network/snapshots", params); };
+exports.readNetworkSnapshots = readNetworkSnapshots;
+var readNetworkSnapshot = function (id) { return (0, http_1.mixinRequest)("/network/snapshots/" + id); };
+exports.readNetworkSnapshot = readNetworkSnapshot;
+var readExternalTransactions = function (params) { return (0, http_1.mixinRequest)("/external/transactions", params); };
+exports.readExternalTransactions = readExternalTransactions;
+var readNetworkAssetsTop = function () { return (0, http_1.mixinRequest)("/network/assets/top"); };
+exports.readNetworkAssetsTop = readNetworkAssetsTop;
+var readNetworkAssetsMultisig = function () { return (0, http_1.mixinRequest)("/network/assets/multisig"); };
+exports.readNetworkAssetsMultisig = readNetworkAssetsMultisig;
+var readNetworkAsset = function (id) { return (0, http_1.mixinRequest)("/network/assets/" + id); };
+exports.readNetworkAsset = readNetworkAsset;
+var searchNetworkAsset = function (assetNameOrSymbol) { return (0, http_1.mixinRequest)("/network/assets/search/" + assetNameOrSymbol); };
+exports.searchNetworkAsset = searchNetworkAsset;
+var readExternalAddressesCheck = function (params) { return (0, http_1.mixinRequest)("/external/addresses/check", params); };
+exports.readExternalAddressesCheck = readExternalAddressesCheck;
+var readNetworkTicker = function (asset_id, offset) { return (0, http_1.mixinRequest)("/network/ticker", { asset: asset_id, offset: offset }); };
+exports.readNetworkTicker = readNetworkTicker;
