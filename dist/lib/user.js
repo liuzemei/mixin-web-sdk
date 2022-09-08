@@ -17,7 +17,7 @@ const toAuthPage = (params) => {
         throw new Error('client_id is required');
     if (!_scope)
         _scope = { profile: true };
-    let url = 'https://mixin-www.zeromesh.net/oauth/authorize?';
+    let url = useCDN ? 'https://mixin-www.zeromesh.net/oauth/authorize' : 'https://mixin.one/oauth/authorize';
     let scope = Object.keys(_scope)
         .map(s => AUTH[s])
         .join('+');

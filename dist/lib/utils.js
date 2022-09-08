@@ -23,7 +23,7 @@ function utf16to8(str) {
     return out;
 }
 var base64EncodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
-function base64encode(str) {
+const base64encode = (str) => {
     str = utf16to8(str);
     var out, i, len;
     var c1, c2, c3;
@@ -53,11 +53,10 @@ function base64encode(str) {
         out += base64EncodeChars.charAt(c3 & 0x3f);
     }
     return out;
-}
+};
 exports.base64encode = base64encode;
-function queryStringify(obj) {
-    return Object.keys(obj)
+const queryStringify = (obj) => '?' +
+    Object.keys(obj)
         .map(key => `${key}=${obj[key]}`)
         .join('&');
-}
 exports.queryStringify = queryStringify;

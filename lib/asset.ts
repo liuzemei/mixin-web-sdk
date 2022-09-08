@@ -17,7 +17,7 @@ export const checkIsPaid = async (p: Payment) => mixinRequest('/payments', {}, '
 
 export const openSnapshot = (params: SnapshotParams) => {
   if (!params.trace && !params.snapshot_id) throw new Error('snapshot_id or trace is required');
-  window.open(`mixin://snapshots${params.trace ? '?' + queryStringify(params) : '/' + params.snapshot_id}`);
+  window.open(`mixin://snapshots${params.trace ? queryStringify(params) : '/' + params.snapshot_id}`);
   if (params.trace) mixinSchema(`snapshots`, params);
   else if (params.snapshot_id) mixinSchema(`snapshots/${params.snapshot_id}`);
 };

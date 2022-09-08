@@ -1,2 +1,2 @@
-export declare function base64encode(str: string): string;
-export declare function queryStringify(obj: object): string;
+export declare const base64encode: (str: string) => string;
+export declare const queryStringify: (obj: object) => string;

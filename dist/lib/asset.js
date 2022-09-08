@@ -24,7 +24,7 @@ exports.checkIsPaid = checkIsPaid;
 const openSnapshot = (params) => {
     if (!params.trace && !params.snapshot_id)
         throw new Error('snapshot_id or trace is required');
-    window.open(`mixin://snapshots${params.trace ? '?' + (0, utils_1.queryStringify)(params) : '/' + params.snapshot_id}`);
+    window.open(`mixin://snapshots${params.trace ? (0, utils_1.queryStringify)(params) : '/' + params.snapshot_id}`);
     if (params.trace)
         (0, http_1.mixinSchema)(`snapshots`, params);
     else if (params.snapshot_id)

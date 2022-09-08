@@ -1,6 +1,6 @@
 {
   "name": "mixin-web-sdk",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "> TODO: description",
   "keywords": [
     "mixin",
@@ -15,8 +15,8 @@
   "homepage": "https://github.com/liuzemei/mixin-web-sdk/packages/web/README.md",
   "license": "ISC",
   "browser": "dist/mixin.browser.min.js",
-  "module": "dist/mixin.min.js",
-  "main": "dist/mixin.min.js",
+  "module": "dist/mixin.browser.min.js",
+  "main": "dist/mixin.browser.min.js",
   "types": "./dist/lib/index.d.js",
   "publishConfig": {
     "access": "public"

@@ -20,7 +20,7 @@ function utf16to8(str: string) {
 }
 
 var base64EncodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
-export function base64encode(str: string): string {
+export const base64encode = (str: string): string => {
   str = utf16to8(str);
   var out, i, len;
   var c1, c2, c3;
@@ -51,10 +51,10 @@ export function base64encode(str: string): string {
     out += base64EncodeChars.charAt(c3 & 0x3f);
   }
   return out;
-}
+};
 
-export function queryStringify(obj: object) {
-  return Object.keys(obj)
+export const queryStringify = (obj: object) =>
+  '?' +
+  Object.keys(obj)
     .map(key => `${key}=${obj[key]}`)
     .join('&');
-}
