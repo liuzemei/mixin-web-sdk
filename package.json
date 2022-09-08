@@ -14,9 +14,9 @@
   "author": "neo <her_liu@qq.com>",
   "homepage": "https://github.com/liuzemei/mixin-web-sdk/packages/web/README.md",
   "license": "ISC",
-  "browser": "dist/mixin.browser.min.js",
-  "module": "dist/mixin.browser.min.js",
-  "main": "dist/mixin.browser.min.js",
+  "browser": "dist/web.browser.min.js",
+  "module": "dist/web.browser.min.js",
+  "main": "dist/web.browser.min.js",
   "types": "./dist/lib/index.d.js",
   "publishConfig": {
     "access": "public"

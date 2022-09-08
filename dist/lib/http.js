@@ -17,13 +17,12 @@ const request = (token) => {
         const p = (0, utils_1.queryStringify)(params);
         const init = {
             method,
-            body: undefined,
             headers: new Headers({
                 'Content-Type': 'application/json',
                 Authorization: token ? `Bearer ${token}` : '',
             }),
         };
-        if (method.toUpperCase() !== 'GET')
+        if (method.toUpperCase() === 'POST')
             init.body = JSON.stringify(data);
         const resp = yield fetch(hostURL[0] + url + p, init);
         const res = yield resp.json();
