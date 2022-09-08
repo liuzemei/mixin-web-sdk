@@ -1,11 +1,3 @@
-# `web`
+# `mixin-web-sdk`
 
-> TODO: description
-
-## Usage
-
-```
-const web = require('web');
-
-// TODO: DEMONSTRATE API
-```
+[中文文档](https://liuzemei.github.io/mixin-js-sdk-docs/docs/web/intro)
