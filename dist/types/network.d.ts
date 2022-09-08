@@ -112,7 +112,7 @@ export interface WithdrawData {
     address: string;
     tag: string;
 }
-export interface PaymentParmas {
+export interface PaymentParams {
     asset: string;
     amount: string | number;
     memo?: string;

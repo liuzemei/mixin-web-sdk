@@ -9,7 +9,7 @@
     "module": "CommonJS",
     "declaration": true,
     "declarationDir": "./dist",
-    "target": "es5",
+    "target": "es2015",
     "allowJs": true,
     "moduleResolution": "Node"
   },

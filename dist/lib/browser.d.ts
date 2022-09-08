@@ -13,14 +13,14 @@ export interface MixinContext {
  * 如果是，则返回相应的 Context 信息
  * @returns {MixinContext | undefined}
  */
-export declare const getContext: () => MixinContext;
+export declare const getContext: () => MixinContext | undefined;
 /**
  * @description 获取当前页面的环境是否为 mixin 环境
  * 如果不是的话，则返回 ''
  * 如果是的话，会返回相应的环境变量
  * @returns {string} '' or 'iOS' or 'Android' or 'Desktop'
  */
-export declare const enviroment: () => "" | "Android" | "iOS" | "Desktop";
+export declare const environment: () => string;
 /**
  * @description 检查当前页面是否开启了沉浸式模式，
  * 即使后台开启了沉浸式模式，在非 mixin 环境内也不会生效。

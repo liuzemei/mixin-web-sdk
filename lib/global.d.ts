@@ -1,6 +1,5 @@
-
 declare interface Window {
-  Mixin: any
-  webkit: any
-  MixinContext: any
+  Mixin: any;
+  webkit: any;
+  MixinContext: any;
 }

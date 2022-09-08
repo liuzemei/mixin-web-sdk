@@ -1,4 +1,4 @@
-import { Asset, NetworkTicker, Snapshot, SnapshotQuery, Transaction } from "../types";
+import { Asset, NetworkTicker, Snapshot, SnapshotQuery, Transaction } from '../types';
 export declare const readNetworkChains: () => Promise<Asset[]>;
 export declare const readNetworkSnapshots: (params: SnapshotQuery) => Promise<Snapshot[]>;
 export declare const readNetworkSnapshot: (id: string) => Promise<Snapshot>;
@@ -7,5 +7,5 @@ export declare const readNetworkAssetsTop: () => Promise<Asset[]>;
 export declare const readNetworkAssetsMultisig: () => Promise<Asset[]>;
 export declare const readNetworkAsset: (id: string) => Promise<Asset>;
 export declare const searchNetworkAsset: (assetNameOrSymbol: string) => Promise<Asset[]>;
-export declare const readExternalAddressesCheck: (params: SnapshotQuery) => Promise<boolean>;
+export declare const readExternalAddressesCheck: (params: SnapshotQuery) => Promise<SnapshotQuery>;
 export declare const readNetworkTicker: (asset_id: string, offset?: string) => Promise<NetworkTicker>;

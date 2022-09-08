@@ -1,8 +1,14 @@
 import * as asset from './asset';
 import * as browser from './browser';
-import { Client } from './client';
 import * as message from './message';
 export declare const Mixin: {
+    readAssets: (token: string) => Promise<import("../types").Asset[]>;
+    readAsset: (token: string, id: string) => Promise<import("../types").Asset>;
+    readFriends: (token: string) => Promise<import("../types").User[]>;
+    readBlockingUser: (token: string) => Promise<import("../types").User[]>;
+    readSnapshots: (token: string) => Promise<import("../types").Snapshot[]>;
+    readSnapshot: (token: string, id: string) => Promise<import("../types").Snapshot>;
+    readConversation: (token: string, id: string) => Promise<import("../types").Conversation>;
     toAuthPage: (params: import("../types").AuthParams) => void;
     openUserModal: (user_id: string) => void;
     openConversation: (conversation_id: string, user?: string) => void;
@@ -15,15 +21,15 @@ export declare const Mixin: {
     readNetworkAssetsMultisig: () => Promise<import("../types").Asset[]>;
     readNetworkAsset: (id: string) => Promise<import("../types").Asset>;
     searchNetworkAsset: (assetNameOrSymbol: string) => Promise<import("../types").Asset[]>;
-    readExternalAddressesCheck: (params: import("../types").SnapshotQuery) => Promise<boolean>;
+    readExternalAddressesCheck: (params: import("../types").SnapshotQuery) => Promise<import("../types").SnapshotQuery>;
     readNetworkTicker: (asset_id: string, offset?: string) => Promise<import("../types").NetworkTicker>;
-    pay: (payment: import("../types").PaymentParmas) => void;
+    pay: (payment: import("../types").PaymentParams) => void;
     checkIsPaid: (p: import("../types").Payment) => Promise<any>;
     openSnapshot: (params: asset.SnapshotParams) => void;
     openTransfer: (user_id: string) => void;
     addAddress: (address: asset.Address) => void;
     removeAddress: (address: asset.Address) => void;
-    withdrawal: (payment: import("../types").PaymentParmas) => void;
+    withdrawal: (payment: import("../types").PaymentParams) => void;
     shareTextToFriend: (text: string) => void;
     shareImageToFriend: (url: string) => void;
     shareContactToFriend: (user_id: string) => void;
@@ -31,7 +37,7 @@ export declare const Mixin: {
     shareLiveToFriend: (liveCard: message.LiveCard) => void;
     sharePostToFriend: (post: any) => void;
     getContext: () => browser.MixinContext;
-    enviroment: () => "" | "Android" | "iOS" | "Desktop";
+    environment: () => string;
     isImmersive: () => boolean;
     getVersion: () => string;
     getMixinVersion: () => string;
@@ -40,7 +46,6 @@ export declare const Mixin: {
     changeTheme: (theme: string) => void;
     checkMixinVersionBiggerThanTarget: (targetVersion: string) => boolean;
     audiosPlayList: (audios: string[]) => any;
-    Client: typeof Client;
     mixinRequest: (url: string, params?: Object, method?: string, data?: Object) => Promise<any>;
     mixinSchema: (url: string, params?: string | Object) => void;
 };
