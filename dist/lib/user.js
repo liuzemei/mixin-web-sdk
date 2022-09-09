@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.openAppHomePage = exports.openConversation = exports.openUserModal = exports.toAuthPage = void 0;
+exports.openCodeModal = exports.openAppHomePage = exports.openConversation = exports.openUserModal = exports.toAuthPage = void 0;
 const http_1 = require("./http");
 const utils_1 = require("./utils");
 const AUTH = {
@@ -30,3 +30,5 @@ const openConversation = (conversation_id, user) => (0, http_1.mixinSchema)(`con
 exports.openConversation = openConversation;
 const openAppHomePage = (app_id, params, action = 'open') => (0, http_1.mixinSchema)(`apps/${app_id}`, Object.assign({ action }, params));
 exports.openAppHomePage = openAppHomePage;
+const openCodeModal = (code_id) => (0, http_1.mixinSchema)(`codes/${code_id}`);
+exports.openCodeModal = openCodeModal;

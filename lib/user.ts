@@ -27,3 +27,5 @@ export const openUserModal = (user_id: string) => mixinSchema(`users/${user_id}`
 export const openConversation = (conversation_id: string, user?: string) => mixinSchema(`conversations/${conversation_id}`, { user });
 
 export const openAppHomePage = (app_id: string, params: object, action = 'open') => mixinSchema(`apps/${app_id}`, { action, ...params });
+
+export const openCodeModal = (code_id: string) => mixinSchema(`codes/${code_id}`);
