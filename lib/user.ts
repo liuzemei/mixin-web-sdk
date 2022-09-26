@@ -1,4 +1,4 @@
-import { AuthParams } from '../types';
+import { AuthParams, Scope } from '../types';
 import { mixinSchema } from './http';
 import { queryStringify } from './utils';
 

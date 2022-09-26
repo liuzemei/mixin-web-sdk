@@ -8,6 +8,7 @@
     "rootDirs": [
       "./lib"
     ],
+    "outDir": "dist",
     "sourceMap": false,
     "noImplicitAny": false,
     "module": "CommonJS",

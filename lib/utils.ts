@@ -53,7 +53,7 @@ export const base64encode = (str: string): string => {
   return out;
 };
 
-export const queryStringify = (obj: object) =>
+export const queryStringify = (obj: any) =>
   '?' +
   Object.keys(obj)
     .map(key => `${key}=${obj[key]}`)

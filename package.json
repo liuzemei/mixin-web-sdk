@@ -1,6 +1,6 @@
 {
   "name": "mixin-web-sdk",
-  "version": "0.0.23",
+  "version": "0.0.28",
   "description": "mixin js sdk",
   "keywords": [
     "mixin",
@@ -14,10 +14,12 @@
   "author": "neo <her_liu@qq.com>",
   "homepage": "https://github.com/liuzemei/mixin-web-sdk/packages/web/README.md",
   "license": "ISC",
-  "browser": "index.js",
-  "module": "index.js",
-  "main": "index.js",
-  "types": "index.d.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "publishConfig": {
     "access": "public"
   },
