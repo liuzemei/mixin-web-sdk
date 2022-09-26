@@ -1,23 +1,23 @@
 {
   "name": "mixin-web-sdk",
-  "version": "0.0.19",
-  "description": "mixin web sdk",
+  "version": "0.0.23",
+  "description": "mixin js sdk",
   "keywords": [
     "mixin",
     "web",
     "sdk"
   ],
   "scripts": {
-    "build": "tsc && webpack",
+    "build": "rm -rf dist && tsc && webpack",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "author": "neo <her_liu@qq.com>",
   "homepage": "https://github.com/liuzemei/mixin-web-sdk/packages/web/README.md",
   "license": "ISC",
-  "browser": "dist/main.js",
-  "module": "dist/main.js",
-  "main": "dist/main.js",
-  "types": "./dist/index.d.js",
+  "browser": "index.js",
+  "module": "index.js",
+  "main": "index.js",
+  "types": "index.d.js",
   "publishConfig": {
     "access": "public"
   },

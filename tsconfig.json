@@ -1,20 +1,19 @@
 {
+  "include": [
+    "./lib",
+    "./index.ts",
+    "./types",
+  ],
   "compilerOptions": {
     "rootDirs": [
       "./lib"
     ],
-    "outDir": "./dist",
     "sourceMap": false,
     "noImplicitAny": false,
     "module": "CommonJS",
     "declaration": true,
-    "declarationDir": "./dist",
     "target": "es2015",
     "allowJs": true,
     "moduleResolution": "Node"
-  },
-  "include": [
-    "./lib/*",
-    "./index.ts"
-  ]
+  }
 }

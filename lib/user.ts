@@ -16,15 +16,17 @@ export const toAuthPage = (params: AuthParams) => {
   if (!client_id) throw new Error('client_id is required');
   if (!_scope) _scope = { profile: true };
   let url = useCDN ? 'https://mixin-www.zeromesh.net/oauth/authorize' : 'https://mixin.one/oauth/authorize';
-  let scope = Object.keys(_scope)
-    .map(s => AUTH[s])
-    .join('+');
+  let scope = '';
+  for (const key in _scope) {
+    if (_scope[key]) scope += `${AUTH[key]}+`;
+  }
+  scope = scope.slice(0, -1);
   location.href = url + queryStringify({ client_id, scope, state, return_to });
 };
 
 export const openUserModal = (user_id: string) => mixinSchema(`users/${user_id}`);
 
-export const openConversation = (conversation_id: string, user?: string) => mixinSchema(`conversations/${conversation_id}`, { user });
+export const openConversation = (conversation_id: string, user?: string) => mixinSchema(`conversations/${conversation_id}`, user ? { user } : '');
 
 export const openAppHomePage = (app_id: string, params: object, action = 'open') => mixinSchema(`apps/${app_id}`, { action, ...params });
 
