@@ -1,3 +1,5 @@
+import { Scope } from '../types';
+
 function utf16to8(str: string) {
   var out, i, len, c;
 
@@ -58,3 +60,23 @@ export const queryStringify = (obj: any) =>
   Object.keys(obj)
     .map(key => `${key}=${obj[key]}`)
     .join('&');
+
+const AUTH = {
+  phone: 'PHONE:READ',
+  profile: 'PROFILE:READ',
+  contacts: 'CONTACTS:READ',
+  assets: 'ASSETS:READ',
+  snapshots: 'SNAPSHOTS:READ',
+  messages: 'MESSAGES:REPRESENT',
+  collectibles: 'COLLECTIBLES:READ',
+};
+
+export const scopeObjToString = (_scope?: Scope) => {
+  if (!_scope) _scope = { profile: true };
+  let scope = '';
+  for (const key in _scope) {
+    if (_scope[key]) scope += `${AUTH[key]}+`;
+  }
+  scope = scope.slice(0, -1);
+  return scope;
+};

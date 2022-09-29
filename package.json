@@ -1,6 +1,6 @@
 {
   "name": "mixin-web-sdk",
-  "version": "0.0.28",
+  "version": "0.0.30",
   "description": "mixin js sdk",
   "keywords": [
     "mixin",
@@ -38,6 +38,8 @@
     "webpack-cli": "^4.9.0"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "pako": "^2.0.4",
+    "uuid": "^9.0.0"
   }
 }
