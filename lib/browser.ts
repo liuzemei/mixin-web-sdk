@@ -128,3 +128,16 @@ export const audiosPlayList = (audios: string[]) => {
       return window.MixinContext && typeof window.MixinContext.playlist === 'function' && window.MixinContext.playlist(audios);
   }
 };
+
+/**
+ * @description 关闭当前页面
+ */
+export const close = () => {
+  switch (environment()) {
+    case 'iOS':
+      return window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.close && window.webkit.messageHandlers.close.postMessage('');
+    case 'Android':
+    case 'Desktop':
+      return window.MixinContext && typeof window.MixinContext.close === 'function' && window.MixinContext.close();
+  }
+};

@@ -1,6 +1,6 @@
 export interface Payment {
   trace_id: string;
-  counter_user_id: string;
+  opponent_id: string;
   asset_id: string;
   amount: string;
 }

@@ -47,3 +47,5 @@ export const MixinLogin = (client_id: string, _scope?: Scope): Promise<AuthData>
 
     ws.addEventListener('open', () => sendRefreshCode());
   });
+
+export const MixinLoginWithoutAuth = () => {};
