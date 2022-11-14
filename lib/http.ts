@@ -21,5 +21,7 @@ export const mixinRequest = request();
 
 export const mixinSchema = (url: string, params: Object | string = '') => {
   if (typeof params === 'object') params = queryStringify(params);
-  window.open(`mixin://${url}${params}`);
+  const aDOM = document.createElement('a');
+  aDOM.href = `mixin://${url}${params}`;
+  aDOM.click();
 };
