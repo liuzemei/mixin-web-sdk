@@ -46,5 +46,5 @@ export const deleteAddress = (address: Address) => {
 export const withdrawal = (payment: PaymentParams) => {
   const { address, asset, amount } = payment;
   if (!address || !asset || !amount) throw new Error('address, asset, amount are required');
-  mixinSchema('withdraw', payment);
+  mixinSchema('withdrawal', payment);
 };
